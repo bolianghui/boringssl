@@ -16,7 +16,7 @@ BoringSSL arose because Google used OpenSSL for many years in various ways and,
 over time, built up a large number of patches that were maintained while
 tracking upstream OpenSSL. As Google's product portfolio became more complex,
 more copies of OpenSSL sprung up and the effort involved in maintaining all
-these patches in multiple places was growing steadily.
+these patches in multiple places was growing steadily.88
 
 Currently BoringSSL is the SSL library in Chrome/Chromium, Android (but it's
 not part of the NDK) and a number of other apps/programs.
