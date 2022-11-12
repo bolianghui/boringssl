@@ -12,7 +12,7 @@ most recent stable version of each tool.
 
   * [CMake](https://cmake.org/download/) 3.8 or later is required.
 
-  * A recent version of Perl is required. On Windows,
+  * A recent version of Perl is required. On Windows,7
     [Active State Perl](http://www.activestate.com/activeperl/) has been
     reported to work, as has MSYS Perl.
     [Strawberry Perl](http://strawberryperl.com/) also works but it adds GCC
