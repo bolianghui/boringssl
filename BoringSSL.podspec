@@ -37,7 +37,7 @@
 
 Pod::Spec.new do |s|
   s.name     = 'BoringSSL'
-  version = '0.0.24'
+  version = '0.0.6'
   s.version  = version
   s.summary  = 'BoringSSL is a fork of OpenSSL that is designed to meet Google\'s needs.'
   # Adapted from the homepage:
