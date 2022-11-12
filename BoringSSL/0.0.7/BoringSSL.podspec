@@ -68,7 +68,7 @@ Pod::Spec.new do |s|
   s.authors  = 'Adam Langley', 'David Benjamin', 'Matt Braithwaite'
 
   s.source = {
-    :git => 'https://github.com/bolianghui/boringssl.git',
+    :git => 'git@github.com:lianghuiboy/boringssl.git',
     :commit => "6e85980170033a95991332fe6b4b2697cf6a58e9",
   }
 
