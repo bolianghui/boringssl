@@ -37,7 +37,7 @@
 
 Pod::Spec.new do |s|
   s.name     = 'BoringSSL'
-  version = '0.0.6'
+  version = '0.0.7'
   s.version  = version
   s.summary  = 'BoringSSL is a fork of OpenSSL that is designed to meet Google\'s needs.'
   # Adapted from the homepage:
@@ -68,8 +68,8 @@ Pod::Spec.new do |s|
   s.authors  = 'Adam Langley', 'David Benjamin', 'Matt Braithwaite'
 
   s.source = {
-    :git => 'https://github.com/bolianghui/boringssl.git',
-    :commit => "b9232f9e27e5668bc0414879dcdedb2a59ea75f2",
+    :git => 'git@github.com:lianghuiboy/boringssl.git',
+    :commit => "6e85980170033a95991332fe6b4b2697cf6a58e9",
   }
 
   s.ios.deployment_target = '9.0'
@@ -117,32 +117,7 @@ Pod::Spec.new do |s|
     ss.header_mappings_dir = 'src/include/openssl'
     ss.source_files = 'src/include/openssl/*.h'
   end
-  s.subspec 'Implementation' do |ss|
-    ss.header_mappings_dir = 'src'
-    ss.source_files = 'src/ssl/*.{h,c,cc}',
-                      'src/ssl/**/*.{h,c,cc}',
-                      'src/crypto/*.{h,c,cc}',
-                      'src/crypto/**/*.{h,c,cc}',
-                      # We have to include fiat because spake25519 depends on it
-                      'src/third_party/fiat/*.{h,c,cc}',
-                      # Include the err_data.c pre-generated in boringssl's master-with-bazel branch
-                      'err_data.c'
-
-    ss.private_header_files = 'src/ssl/*.h',
-                              'src/ssl/**/*.h',
-                              'src/crypto/*.h',
-                              'src/crypto/**/*.h',
-                              'src/third_party/fiat/*.h'
-    # bcm.c includes other source files, creating duplicated symbols. Since it is not used, we
-    # explicitly exclude it from the pod.
-    # TODO (mxyan): Work with BoringSSL team to remove this hack.
-    ss.exclude_files = 'src/crypto/fipsmodule/bcm.c',
-                       'src/**/*_test.*',
-                       'src/**/test_*.*',
-                       'src/**/test/*.*'
-
-    ss.dependency "#{s.name}/Interface", version
-  end
+  
 
   s.prepare_command = <<-END_OF_COMMAND
     set -e
