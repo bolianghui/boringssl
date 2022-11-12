@@ -12,7 +12,7 @@ also defines upstream's `OPENSSL_NO_*` feature macros corresponding to removed
 features. If the preprocessor is needed, use these version checks or feature
 macros where possible, especially when patching third-party projects. Such
 patches are more generally useful to OpenSSL consumers and thus more
-appropriate to send upstream.
+appropriate to send upstream.5
 
 In some cases, BoringSSL-specific code may be necessary. Use the
 `OPENSSL_IS_BORINGSSL` preprocessor macro in `#ifdef`s. However, first contact
